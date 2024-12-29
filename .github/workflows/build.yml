@@ -1,12 +1,12 @@
-name: Build Tarball Distribution
+name: Build Debian Package
 
 on:
   push:
     branches:
-      - branchAutomake
+      - branchAutoPackage
   pull_request:
     branches:
-      - branchAutomake
+      - branchAutoPackage
 
 jobs:
   build:
@@ -16,10 +16,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install autoconf and automake
+      - name: Install autoconf, automake, and dpkg
         run: |
           sudo apt-get update
-          sudo apt-get install -y autoconf automake
+          sudo apt-get install -y autoconf automake dpkg-dev debhelper
 
       - name: Run autogen.sh
         run: |
@@ -28,14 +28,14 @@ jobs:
 
       - name: Run configure
         run: |
-          ./configure 
+          ./configure
 
-      - name: Build Tarball
+      - name: Build Debian package
         run: |
-          make dist
+          dpkg-buildpackage -us -uc
 
-      - name: Archive the tarball distribution file
+      - name: Archive the Debian package
         uses: actions/upload-artifact@v4
         with:
           name: hyperbolic-series
-          path: ./hyperbolic_series-1.0.tar.gz
+          path: ../*.deb
