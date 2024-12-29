@@ -25,7 +25,7 @@ jobs:
         run: make
 
       - name: Archive the binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hyperbolic-series-binary
           path: bin/hyperbolic_series
