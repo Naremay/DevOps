@@ -1,12 +1,12 @@
-name: C++ Build
+name: Build Tarball Distribution
 
 on:
   push:
     branches:
-      - branchMake
+      - branchAutomake
   pull_request:
     branches:
-      - branchMake
+      - branchAutomake
 
 jobs:
   build:
@@ -16,16 +16,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install GCC and Make
+      - name: Install autoconf and automake
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++ make
+          sudo apt-get install -y autoconf automake
 
-      - name: Build with Make
-        run: make
+      - name: Run autogen.sh
+        run: |
+          chmod +x autogen.sh
+          ./autogen.sh
 
-      - name: Archive the binary
+      - name: Build Tarball
+        run: |
+          make dist
+
+      - name: Archive the tarball distribution file
         uses: actions/upload-artifact@v4
         with:
-          name: hyperbolic-series-binary
-          path: bin/hyperbolic_series
+          name: hyperbolic-series
+          path: bin/
