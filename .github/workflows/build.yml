@@ -24,11 +24,8 @@ jobs:
       - name: Build with Make
         run: make
 
-      - name: Verify the binary
-        run: |
-          if [ -f "./bin/hyperbolic_series" ]; then
-            echo "Build successful!"
-          else
-            echo "Build failed: Binary not found."
-            exit 1
-          fi
+      - name: Archive the binary
+      uses: actions/upload-artifact@v3
+      with:
+        name: hyperbolic-series-binary
+        path: bin/hyperbolic_series
