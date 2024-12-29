@@ -39,3 +39,7 @@ aclocal.m4
 config.status
 hyperbolic_series*
 missing
+debian/files
+debian/hyperbolic-series*
+debian/autoreconf*
+debian/hyperbolic-series/

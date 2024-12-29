@@ -1,11 +1,7 @@
 Source: hyperbolic-series
-Section: utils
-Priority: optional
-Maintainer: Your Name <youremail@example.com>
-Build-Depends: debhelper (>= 12)
-Standards-Version: 4.5.0
+Maintainer: Naremay <petrrenkoo@gmail.com>
+Build-Depends: debhelper-compat (= 13)
 
 Package: hyperbolic-series
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: A program that calculates hyperbolic series
