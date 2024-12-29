@@ -1,12 +1,12 @@
-name: Build Debian Package
+name: Build and Test
 
 on:
   push:
     branches:
-      - branchAutoPackage
+      - branchAutoTest
   pull_request:
     branches:
-      - branchAutoPackage
+      - branchAutoTest
 
 jobs:
   build:
@@ -16,19 +16,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install autoconf, automake, and dpkg
+      - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y autoconf automake dpkg-dev debhelper
+          sudo apt-get install -y autoconf automake dpkg-dev debhelper g++
 
+      # Run autogen.sh
       - name: Run autogen.sh
         run: |
           chmod +x autogen.sh
           ./autogen.sh
 
+      # Run configure
       - name: Run configure
         run: |
           ./configure
+
+      # Run tests
+      - name: Run tests
+        run: |
+          make check
 
       - name: Build Debian package
         run: |
