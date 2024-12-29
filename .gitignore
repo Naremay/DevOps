@@ -43,3 +43,4 @@ debian/files
 debian/hyperbolic-series*
 debian/autoreconf*
 debian/hyperbolic-series/
+hyperbolic-series*

@@ -3,10 +3,10 @@ AUTOMAKE_OPTIONS = foreign
 bin_PROGRAMS = hyperbolic_series
 hyperbolic_series_SOURCES = FuncA.cpp main.cpp
 
-bindir = usr/bin
+bindir = app/usr/bin
 
 # Пакетні файли Debian
-dist_noinst_DATA = debian/changelog debian/control debian/copyright
+dist_noinst_DATA = app/debian/changelog app/debian/control app/debian/copyright
 
 # Правила для створення пакету
-MAINTAINERCLEANFILES = debian/changelog debian/control debian/copyright
+MAINTAINERCLEANFILES = app/debian/changelog app/debian/control app/debian/copyright
