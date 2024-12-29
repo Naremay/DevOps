@@ -26,6 +26,10 @@ jobs:
           chmod +x autogen.sh
           ./autogen.sh
 
+        name: Run configure
+        run: |
+          ./configure 
+
       - name: Build Tarball
         run: |
           make dist
