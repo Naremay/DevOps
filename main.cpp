@@ -4,8 +4,15 @@
 int main() {
     FuncA func;
 
-    double x = 1.0;
-    int n = 5;
+    // Input values for x and n
+    double x;
+    int n;
+
+    std::cout << "Enter the value of x: ";
+    std::cin >> x;
+    std::cout << "Enter the number of terms (n): ";
+    std::cin >> n;
+
     std::cout << "Result: " << func.calculate(x, n) << std::endl;
 
     return 0;
