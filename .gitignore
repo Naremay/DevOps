@@ -1,0 +1,41 @@
+# Всі файли, які генеруються automake та autoconf
+# Не потрібно додавати до Git
+
+# Файли, що генеруються automake та autoconf
+Makefile.in
+Makefile.am~
+config.h.in
+config.guess
+config.sub
+configure
+depcomp
+install-sh
+ltmain.sh
+mkinstalldirs
+.deps
+
+# Каталоги для тимчасових файлів
+autom4te.cache/
+
+# Файли логів
+*.log
+
+# Файли, що генеруються компіляцією
+*.o
+*.lo
+*.la
+*.al
+*.libs
+*.a
+*.so
+*.out
+*.dSYM/
+*.stackdump
+
+# Інші тимчасові файли
+*~
+Makefile
+aclocal.m4
+config.status
+hyperbolic_series*
+missing
