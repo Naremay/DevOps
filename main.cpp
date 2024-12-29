@@ -3,6 +3,11 @@
 
 int main() {
     FuncA func;
-    std::cout << "Result: " << func.calculate() << std::endl;
+
+    double x = 1.0;
+    int n = 5;
+    std::cout << "Result: " << func.calculate(x, n) << std::endl;
+
     return 0;
 }
+
