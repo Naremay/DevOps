@@ -11,7 +11,7 @@ void test_calculate_time_within_range() {
     const int x_start = 1;
     const int x_end = 100;
     const int n_start = 1000;
-    const int n_end = 2000;
+    const int n_end = 3000;
 
     auto start_time = std::chrono::high_resolution_clock::now();
 
