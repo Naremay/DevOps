@@ -46,9 +46,9 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/http_server:1.0 .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/http_server:1.0 -t ${{ secrets.DOCKER_USERNAME }}/http_server:latest .
 
       # Step 4: Push the Docker image to your private Docker Hub repository
       - name: Push Docker Image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/http_server:1.0
+          docker push --all-tags ${{ secrets.DOCKER_USERNAME }}/http_server
