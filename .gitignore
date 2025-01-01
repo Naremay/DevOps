@@ -45,3 +45,5 @@ debian/autoreconf*
 debian/hyperbolic-series/
 hyperbolic-series*
 test-driver
+tests/test_funcA
+tests/test_funcA.trs

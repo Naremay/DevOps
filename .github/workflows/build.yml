@@ -37,3 +37,8 @@ jobs:
         run: |
           make check
 
+      - name: Archive the log tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: test_log
+          path: tests/*.log 
