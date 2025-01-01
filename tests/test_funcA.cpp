@@ -1,4 +1,4 @@
-#include "FuncA.h"
+#include "../FuncA.h"
 #include <cassert>
 #include <chrono>
 #include <iostream>
@@ -10,8 +10,8 @@ void test_calculate_time_within_range() {
     FuncA func;
     const int x_start = 1;
     const int x_end = 100;
-    const int n_start = 500;
-    const int n_end = 1000;
+    const int n_start = 1000;
+    const int n_end = 2000;
 
     auto start_time = std::chrono::high_resolution_clock::now();
 

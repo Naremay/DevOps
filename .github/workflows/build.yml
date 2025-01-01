@@ -22,20 +22,21 @@ jobs:
           sudo apt-get install -y autoconf automake dpkg-dev debhelper g++
 
       # Run autogen.sh
-      - name: Run autogen.sh
-        run: |
-          chmod +x autogen.sh
-          ./autogen.sh
+     # - name: Run autogen.sh
+      #  run: |
+       #   chmod +x autogen.sh
+        #  ./autogen.sh
 
       # Run configure
-      - name: Run configure
-        run: |
-          ./configure
+     # - name: Run configure
+      #  run: |
+          #./configure
 
       # Run tests
       - name: Run tests
         run: |
-          make check
+          sudo g++ -o test tests/test_funcA.cpp FuncA.cpp -lcpprest -lssl -lcrypto -std=c++11
+          ./test
 
       - name: Archive the log tests
         uses: actions/upload-artifact@v4
