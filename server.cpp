@@ -24,7 +24,7 @@ void handle_compute(http_request request) {
     // Iterate over x
     for (int x = 1; x <= 100; ++x) {
         // Iterate over n
-        for (int n = 1000; n <= 2000; ++n) {
+        for (int n = 1000; n <= 3000; ++n) {
             // Perform calculation and store in result array
             result_array.push_back(func.calculate(static_cast<double>(x), n));
         }
